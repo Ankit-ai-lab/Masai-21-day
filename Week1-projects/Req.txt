@@ -1,0 +1,383 @@
+Q: 1
+React Mini Project: Dashboard + Listing + Details + Saved Items App
+Duration: 8 Hours (you can do this across the week)
+Build a React app based on any theme of your choice.
+
+You can choose one flavour from the list below, or create a similar one:
+
+Course Dashboard
+Movie Watchlist
+Recipe Finder
+Book Library
+Job Tracker
+Product Catalogue
+Travel Places Explorer
+Fitness Workout Library
+Student Resource Hub
+Article/Blog Library
+The theme can change, but the app structure and required features must remain the same.
+
+Project Objective
+Create a React application where users can:
+
+1. Navigate between multiple pages
+2. View a list of items
+3. Search items
+4. Filter items by category/type
+5. Open a details page for a single item
+6. Save/favourite items
+7. View saved items on a separate page
+8. Remove saved items
+9. Switch between light and dark theme
+10. Use React optimization hooks properly
+Required Pages
+Your app must have these pages:
+
+Home
+Explore/List Page
+Details Page
+Saved/Favourites Page
+About Page
+404 Not Found Page
+You can rename the pages based on your theme.
+
+Example for Movie Watchlist:
+
+Home
+Movies
+Movie Details
+Watchlist
+About
+404 Not Found
+Example for Recipe Finder:
+
+Home
+Recipes
+Recipe Details
+Saved Recipes
+About
+404 Not Found
+Required Routes
+Use React Router.
+
+Your app must support these routes:
+
+/                  Home page
+/items             Main listing page
+/items/:itemId     Details page
+/saved             Saved/Favourites page
+/about             About page
+*                  404 Not Found page
+You may rename /items based on your theme.
+
+Examples:
+
+/courses
+/courses/:courseId
+
+/movies
+/movies/:movieId
+
+/recipes
+/recipes/:recipeId
+
+/jobs
+/jobs/:jobId
+Required Data
+Create at least 10 items.
+
+Each item must have at least:
+
+id
+title/name
+category
+level/type/status
+duration/price/rating/date
+description
+Example for Course Dashboard:
+
+id
+title
+category
+level
+duration
+price
+description
+Example for Movie Watchlist:
+
+id
+title
+genre
+rating
+duration
+releaseYear
+description
+Example for Job Tracker:
+
+id
+title
+company
+location
+type
+salary
+description
+Example for Recipe Finder:
+
+id
+title
+category
+cookingTime
+difficulty
+ingredients
+description
+Mandatory Features
+1. Navbar and Routing
+The app must have a Navbar with links to:
+
+Home
+Explore/List Page
+Saved/Favourites
+About
+Use Link or NavLink.
+
+Do not use normal <a> tags for internal routing.
+
+2. Home Page
+The Home page should include:
+
+App title
+Short description of the app
+Button/link to explore items
+Small summary section
+Example:
+
+Welcome to MovieHub
+Explore movies, view details, and save your watchlist.
+3. Main Listing Page
+The main listing page should show all items using .map().
+
+Each item card should show:
+
+Title/name
+Category/type
+One or two important details
+View Details button/link
+Save/Favourite button
+Example:
+
+React Basics
+Category: Frontend
+Level: Beginner
+Duration: 2 weeks
+[View Details] [Save]
+4. Search Feature
+Add a search input.
+
+The user should be able to search items by title/name.
+
+Example:
+
+Search courses...
+Search movies...
+Search recipes...
+Search jobs...
+The displayed list should update based on the search text.
+
+5. Filter Feature
+Add a dropdown filter.
+
+Example filters:
+
+All
+Frontend
+Backend
+AI
+Data
+or
+
+All
+Action
+Drama
+Comedy
+Thriller
+or
+
+All
+Beginner
+Intermediate
+Advanced
+Search and filter must work together.
+
+Example:
+
+Search: React
+Category: Frontend
+Only items matching both conditions should be shown.
+
+6. useMemo Requirement
+Use useMemo for the filtered list.
+
+The filtered list should depend on:
+
+items
+search text
+selected filter
+Also show:
+
+Showing 5 results
+This count should update based on the filtered list.
+
+7. useRef Requirement
+Use useRef for at least one useful interaction.
+
+Minimum requirement:
+
+Add a Focus Search button that focuses the search input.
+When the user clicks Focus Search, the search input should become active.
+
+8. Details Page
+Clicking View Details should open a details page using dynamic routing.
+
+Example:
+
+/items/3
+The Details page must use useParams() to read the item id from the URL.
+
+The Details page should show:
+
+Title/name
+Category/type
+All important item details
+Description
+Save/Favourite button
+Back to list button/link
+If the item id does not exist, show:
+
+Item not found
+9. Saved/Favourites Page
+Users should be able to save/favourite items.
+
+The Saved page should show:
+
+All saved items
+Total saved count
+Remove button for each saved item
+If no item is saved, show:
+
+No saved items yet
+10. Duplicate Save Rule
+The same item should not be saved multiple times.
+
+Any one approach is acceptable:
+
+Show alert: Item already saved
+Disable save button for saved item
+Change button text to Saved
+11. useMemo for Saved Summary
+Use useMemo to calculate one saved-items summary.
+
+Depending on your project theme, this can be:
+
+Total saved price
+Average rating
+Total duration
+Total cooking time
+Total salary estimate
+Total number of saved items by category
+Example for Course Dashboard:
+
+Total saved course price: ₹12000
+Example for Movie Watchlist:
+
+Average rating of saved movies: 8.4
+Example for Recipe Finder:
+
+Total cooking time: 180 minutes
+12. useCallback Requirement
+Use useCallback for functions passed to child components.
+
+At minimum, use it for:
+
+saveItem
+removeItem
+These functions should be passed to reusable card components.
+
+13. React.memo Requirement
+Create at least one reusable card component and wrap it with React.memo.
+
+Examples:
+
+ItemCard
+SavedItemCard
+CourseCard
+MovieCard
+RecipeCard
+JobCard
+The goal is to avoid unnecessary re-renders when props have not changed.
+
+14. Context API Requirement
+Use Context API for theme management.
+
+The app should support:
+
+Light mode
+Dark mode
+The Navbar should have a theme toggle button.
+
+Example:
+
+Switch to Dark Mode
+or
+
+Switch to Light Mode
+Theme should affect the basic app UI:
+
+background color
+text color
+card style
+button style optional
+15. About Page
+The About page should explain:
+
+What the app does
+Which theme/flavour was selected
+Main features
+Example:
+
+This is a movie watchlist app where users can explore movies, view details, and save their favourite movies.
+16. 404 Page
+If the user enters an invalid route, show a 404 page.
+
+It should include:
+
+404 Page Not Found
+Back to Home link/button
+Mandatory React Concepts
+Your app must use:
+
+React components
+useState
+useRef
+useMemo
+useCallback
+useContext
+React.memo
+React Router
+Dynamic routing
+List rendering using map
+Conditional rendering
+Redux is optional.
+
+Optional Bonus Features
+Attempt these only after completing the main requirements:
+
+Use NavLink to highlight active route
+Add sorting
+Add a second filter
+Persist saved items using localStorage
+Add form to create a new item
+Add edit/delete item feature
+Add loading state simulation
+Improve styling and responsiveness
+Show saved count in Navbar
+Use Redux for saved items
